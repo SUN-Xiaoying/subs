@@ -1,8 +1,29 @@
+input {
+	outline: none;
+	border: none;
+}
+
+input:focus {
+    border-color: transparent !important;
+}
+
+button {
+	outline: none !important;
+	border: none;
+	background: transparent;
+}
+
+button:hover {
+	cursor: pointer;
+}
+
+
 /*------------------------------------------------------------------
 [ Container ]*/
 .container-login{
 
-    width: 100%;  
+    width: 100%;
+    margin: 0 auto;  
     min-height: 100vh;
     display: -webkit-box;
     display: -webkit-flex;
@@ -21,7 +42,7 @@
     z-index: 1;  
 }
 
-.container-login::before {
+.container-login:before {
     content: "";
     display: block;
     position: absolute;
@@ -39,14 +60,18 @@
     overflow: hidden;
   
     background: transparent;
+
+    padding: 177px 130px 33px 95px;
   }
+
+
 
 /*------------------------------------------------------------------
 [ Form ]*/
 
-.login-title {
+.form-title {
     font-family: Ubuntu-Bold;
-    font-size: 28px;
+    font-size: 24px;
     color: #fff;
     line-height: 1.2;
     text-align: center;
@@ -55,120 +80,70 @@
     display: block;
   }
 
-.login-form {
-    width: 100%;
-    border-radius: 10px;
-    background-color: #fff;
-  }
   
-/* .login-form-logo {
-    font-size: 60px; 
-    color: #333333;
-
-    display: -webkit-box;
-    display: -webkit-flex;
-    display: -moz-box;
-    display: -ms-flexbox;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    width: 120px;
-    height: 120px;
-    border-radius: 50%;
-    background-color: #fff;
-    margin: 0 auto;
-} */
 
   /*------------------------------------------------------------------
 [ Input ]*/
 
 .wrap-input {
-    width: 100%;
     position: relative;
-    border-bottom: 1px solid #e6e6e6;
-    padding: 29px 0;
+    width: 100%;
+    z-index: 1;
+    margin-bottom: 10px;
   }
   
-.login-input {
-    font-family: Ubuntu-Regular;
-    font-size: 20px;
-    color: #555555;
-    line-height: 1.2;
-
+  .input-login {
+    font-family: Poppins-Medium;
+    font-size: 15px;
+    line-height: 1.5;
+    color: #666666;
+  
     display: block;
     width: 100%;
+    background: #e6e6e6;
     height: 50px;
-    background: transparent;
-    padding: 0 10px 0 80px;
-    -webkit-transition: all 0.4s;
-    -o-transition: all 0.4s;
-    -moz-transition: all 0.4s;
-    transition: all 0.4s;
-}
+    border-radius: 25px;
 
-  /*---------------------------------------------*/ 
+    padding-left: 30px;
+  }
+  
+  
+  /*------------------------------------------------------------------
+  [ Focus ]*/
   .focus-input {
-    position: absolute;
     display: block;
+    position: absolute;
+    border-radius: 25px;
+    bottom: 0;
+    left: 0;
+    z-index: -1;
     width: 100%;
     height: 100%;
-    top: 0;
-    left: 0;
-    pointer-events: none;
+    box-shadow: 0px 0px 0px 0px;
+    color: rgba(253, 214, 166, 0.8);
+
+    padding-left: 30px;
   }
   
-  .focus-input:before {
-    content: "";
-    display: block;
-    position: absolute;
-    bottom: -1px;
-    left: 0;
-    width: 0;
-    height: 1px;
-  
-    -webkit-transition: all 0.4s;
-    -o-transition: all 0.4s;
-    -moz-transition: all 0.4s;
-    transition: all 0.4s;
-  
-    background: #d41872;
-    background: -webkit-linear-gradient(left, #a445b2, #d41872, #fa4299);
-    background: -o-linear-gradient(left, #a445b2, #d41872, #fa4299);
-    background: -moz-linear-gradient(left, #a445b2, #d41872, #fa4299);
-    background: linear-gradient(left, #a445b2, #d41872, #fa4299);
+  .input-login:focus + .focus-input{
+    -webkit-animation: anim-shadow 0.5s ease-in-out forwards;
+    animation: anim-shadow 0.5s ease-in-out forwards;
   }
   
-  .focus-input:after {
-    font-family: Linearicons-Free;
-    font-size: 18px;
-    color: #999999;
-  
-    content: attr(data-placeholder);
-    display: block;
-    width: 100%;
-    position: absolute;
-    top: 40px;
-    left: 35px;
-   
-  
-    -webkit-transition: all 0.4s;
-    -o-transition: all 0.4s;
-    -moz-transition: all 0.4s;
-    transition: all 0.4s;
+  @-webkit-keyframes anim-shadow {
+    to {
+      box-shadow: 0px 0px 70px 25px;
+      opacity: 0;
+    }
   }
   
-  .input:focus {
-    padding-left: 60px;
-  }
-  
-  .input:focus + .focus-input:after {
-    left: 23px;
-    color: #d41872;
-  }
-  
-  .input:focus + .focus-input:before {
-    width: 100%;
-  }
+  @keyframes anim-shadow {
+    to {
+      box-shadow: 0px 0px 70px 25px;
+      opacity: 0;
+    }
+  } 
+
 
 /*------------------------------------------------------------------
 [ Button ]*/
@@ -202,7 +177,7 @@
     height: 42px;
     border-radius: 21px;
   
-    background: bisque;
+    background: rgb(253, 214, 166);
     position: relative;
     z-index: 1;
   
@@ -239,8 +214,10 @@
     opacity: 1;
   }
   
-  
+/*------------------------------------------------------------------
+[ Alert validate ]*/
 
-  
-
+.validate-input {
+    position: relative;
+  }
   
