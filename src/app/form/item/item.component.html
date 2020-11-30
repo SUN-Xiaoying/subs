@@ -1,0 +1,14 @@
+<div class="item-container">
+
+    <input type="checkbox"
+        id="todo"
+        name="todo"
+        (click)="item.toggleStatus()">
+
+<!-- <label for="todo">{{item.content}}</label> -->
+
+    <input type="text" 
+            name="item-content" 
+            placeholder="content"
+            [(ngModel)]="item.content">
+</div>

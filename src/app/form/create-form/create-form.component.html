@@ -1,12 +1,22 @@
 <h2>Create Form</h2>
 <div class="form-group">
     <form (ngSubmit)="createForm()">
-        <div class="form-item">
-            <input type="checkbox" name="item-status">
-            <input type="text" name="item-content">
+        <div class="form-subject">
+            <input type="text" name="form-subject" [(ngModel)]="form.subject">
         </div>
-        <button type="submit">Create</button>
+        <div class="form-rate"
+            [class]="form.isPositive ? 'positive' : 'negative'">
+            {{form.rate}}%
+        </div>
+        <div class="create-item">
+            <input type="checkbox" name="item-status">
+            <input type="text" name="item-content" placeholder="make a wish">
+        </div>
     </form>
+    <button type="submit">Create</button>
 
-
+<!-- <div class="form-item">
+    <input type="checkbox" *ngFor="let item of items"
+                            [item]="item">{{item}}
+</div> -->
 </div>

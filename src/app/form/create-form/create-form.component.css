@@ -1,0 +1,15 @@
+form{
+    list-style: none;
+    list-style-position: outside;
+    margin: 0px;
+    font-family: Verdana;
+    font-size: 12px;
+}
+
+.positive{
+    background-color:  rgb(244, 227, 253);
+}
+
+.negative{
+    background-color:  rgb(202, 202, 202);
+}

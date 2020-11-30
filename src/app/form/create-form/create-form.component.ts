@@ -1,5 +1,5 @@
 import { Component} from '@angular/core';
-import { from } from 'rxjs';
+import { Item } from '../../model/item';
 import { Form } from '../../model/form'
 
 @Component({
@@ -10,9 +10,8 @@ import { Form } from '../../model/form'
 export class CreateFormComponent{
 
   public form: Form;
+  public items: Item[];
   constructor() { 
-    this.form = new Form('subs',0,0);
-
   }
 
   createForm(){
