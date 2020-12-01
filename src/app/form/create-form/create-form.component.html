@@ -1,22 +1,29 @@
-<h2>Create Form</h2>
+<h2>Create Item</h2>
 <div class="form-group">
-    <form (ngSubmit)="createForm()">
-        <div class="form-subject">
-            <input type="text" name="form-subject" [(ngModel)]="form.subject">
+    <form [formGroup]="createItemForm" (ngSubmit)="onSubmit()">
+        <div class="item-status">
+            <input type="checkbox"
+                    id="status"
+                    name="status"
+                    formControlName="status">
         </div>
-        <div class="form-rate"
-            [class]="form.isPositive ? 'positive' : 'negative'">
-            {{form.rate}}%
+        <div class="item-content">
+            <input type="text"
+                     placeholder="To do"
+                     name="content"
+                     formControlName="content">
+            <div *ngIf="createItemForm.get('content').invalid &&
+                        (createItemForm.get('content').dirty ||
+                         createItemForm.get('content').touched)">
+            Make a wish~
+            </div>
         </div>
-        <div class="create-item">
-            <input type="checkbox" name="item-status">
-            <input type="text" name="item-content" placeholder="make a wish">
-        </div>
+        <button type="submit">Submit</button>
+        <!-- <button type="button" (click)="resetForm()">Reset</button>
+        <button type="button" (click)="loadFromServer()">Load from server</button> -->
     </form>
-    <button type="submit">Create</button>
 
-<!-- <div class="form-item">
-    <input type="checkbox" *ngFor="let item of items"
-                            [item]="item">{{item}}
-</div> -->
 </div>
+
+<p>Form Control value: {{createItemForm.value | json}}</p>
+<p>Form Control status: {{createItemForm.status | json}}</p>

@@ -1,4 +1,4 @@
-import { Component, Input} from '@angular/core';
+import { Component, EventEmitter, Input, Output} from '@angular/core';
 import { Item } from '../../model/item';
 
 @Component({
@@ -9,10 +9,19 @@ import { Item } from '../../model/item';
 export class ItemComponent{
 
   @Input() public item: Item;
+  @Output() private toggleStatus: EventEmitter<Item>;
+
   constructor() {
-    this.item.content = "wish";
+    this.toggleStatus = new EventEmitter<Item>();
    }
 
+   onToggleStatus(event){
+     this.toggleStatus.emit(this.item);
+   }
+
+  //  toggleStatus(){
+  //    this.item.status = !this.item.status;
+  //  }
 
 
 }

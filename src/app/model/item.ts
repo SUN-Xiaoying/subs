@@ -9,7 +9,6 @@ export class Item{
 
     toggleStatus(){
         this.status = !this.status;
-
     }
 
     

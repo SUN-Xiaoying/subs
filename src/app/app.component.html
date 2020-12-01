@@ -1,5 +1,20 @@
 <div class="container">
+
+  <nav class="nav">
+
+    <a [routerLink]="['/login']" routerLinkActive="router-link-active" 
+        class="nav_link">Login</a>
+
+    <a [routerLink]="['/about']" routerLinkActive="router-link-active" 
+        class="nav_link">About</a>
+      <!-- <li class="nav_item">
+        <a href="#3" class="nav__link c-red"><i class="fa fa-music"></i></a>
+      </li>
+      <li class="nav_item">
+        <a href="#4" class="nav__link c-green"><i class="fa fa-paper-plane"></i></a>
+      </li> -->
+  </nav>
+
   <router-outlet></router-outlet>
-  <!-- <panel></panel> -->
-  <!-- <item></item> -->
+
 </div>

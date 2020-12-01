@@ -4,12 +4,13 @@
 
 ### User
 
-- [ ] Welcome page
+- [x] Welcome page
 
 [welcome template](https://www.w3schools.com/w3css/tryw3css_templates_parallax.htm)
 
-- [ ] Login
-- [ ] Register
+- [ ] Login Page
+- [ ] Add User
+- [ ] Register Page
 - [ ] MySQL store USER
 
 
