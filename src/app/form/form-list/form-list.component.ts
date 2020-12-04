@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { Form } from 'src/app/model/form';
+import { Form } from 'src/app/model/form.model';
 
 @Component({
   selector: 'app-form-list',

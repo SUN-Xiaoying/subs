@@ -147,16 +147,6 @@ button:hover {
 
 /*------------------------------------------------------------------
 [ Button ]*/
-.container-login-btn {
-    width: 100%;
-    display: -webkit-box;
-    display: -webkit-flex;
-    display: -moz-box;
-    display: -ms-flexbox;
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-  }
   
   .login-btn {
     font-family: Ubuntu-Bold;
@@ -221,3 +211,8 @@ button:hover {
     position: relative;
   }
   
+.a-register{
+  font-size: 14px;
+  line-height: 1.5;
+  color: #fff;
+}

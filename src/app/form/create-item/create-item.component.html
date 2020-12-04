@@ -1,0 +1,25 @@
+<h2>Make a wish</h2>
+<div class="form-group">
+
+    <form [formGroup]="createItemForm" (ngSubmit)="onSubmit()">
+        <input type="text" 
+            name="item-todo" 
+            placeholder="to do"
+            formControlName="todo">
+        <div *ngIf="todo().invalid">
+            Make a wish
+        </div>
+        
+        <div class="container-btn m-t-32">
+            <button type="submit">Submit</button>
+            <button type="button"
+                    (click)="resetForm()">
+                Reset</button>
+        </div>
+        
+    </form> 
+
+    <!-- {{item.content}} -->
+
+    <p>To do: {{ createItemForm.value | json }}</p>
+</div>

@@ -1,29 +1,39 @@
-<h2>Create Item</h2>
+<h2>New Form</h2>
 <div class="form-group">
-    <form [formGroup]="createItemForm" (ngSubmit)="onSubmit()">
-        <div class="item-status">
-            <input type="checkbox"
-                    id="status"
-                    name="status"
-                    formControlName="status">
-        </div>
-        <div class="item-content">
-            <input type="text"
-                     placeholder="To do"
-                     name="content"
-                     formControlName="content">
-            <div *ngIf="createItemForm.get('content').invalid &&
-                        (createItemForm.get('content').dirty ||
-                         createItemForm.get('content').touched)">
-            Make a wish~
+    <form [formGroup]="newForm" (ngSubmit)="onSubmit()">
+        <div formArrayName="members">
+            <div *ngFor = "let member of members.controls; let i =index"
+                [formGroupName]="i"
+                class="container-member">
+                <div>
+                    Person {{i+1}}
+                </div>
+                <div>
+                    <input type="text"
+                            placeholder="Person name"
+                            formControlName="name">
+                </div>
+                <div>
+                    <input type="text"
+                            placeholder="Person Title"
+                            formControlName="title">
+                </div>
+ 
+                <button type="button"
+                        (click)="removeMember()">
+                    Remove member</button>
             </div>
         </div>
+        <button type="button"
+                (click)="addMember()">
+             Add member</button>
         <button type="submit">Submit</button>
-        <!-- <button type="button" (click)="resetForm()">Reset</button>
+        <button type="button" (click)="resetForm()">Reset</button>
+        <!-- 
         <button type="button" (click)="loadFromServer()">Load from server</button> -->
     </form>
 
 </div>
-
-<p>Form Control value: {{createItemForm.value | json}}</p>
-<p>Form Control status: {{createItemForm.status | json}}</p>
+<!-- 
+<p>Form Control value: {{newForm.value | json}}</p>
+<p>Form Control status: {{newForm.status | json}}</p> -->

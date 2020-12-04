@@ -1,18 +1,20 @@
-import { Item } from '../model/item'
+import { Item } from './item.model'
 
 export class Form{
-    public date: Date = new Date();
-    public subject: string;
-    
-    public rate: number;
+    date: Date = new Date();
+    items: Item[];
+    members: Person[];
+    // public subject: string;
+    rate: number;
     public preRate: number;
     
-    public items: Item[];
+
     public checked: number;
     public sum: number;
 
-    constructor(){
-        
+    constructor(public subject: string){
+        this.items = [];
+        this.members = [];
     }
 
     isPositive() : boolean{
@@ -33,4 +35,9 @@ export class Form{
     }
 
     
+}
+
+export class Person{
+    name: string;
+    title: string;
 }
