@@ -1,0 +1,23 @@
+{
+  "name": "subs-server",
+  "version": "1.0.0",
+  "description": "2020.12.5",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/SUN-Xiaoying/subs.git"
+  },
+  "keywords": [
+    "npm",
+    "server"
+  ],
+  "author": "Xiaoying",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/SUN-Xiaoying/subs/issues"
+  },
+  "homepage": "https://github.com/SUN-Xiaoying/subs#readme"
+}
