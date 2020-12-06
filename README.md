@@ -8,21 +8,21 @@
 
 [welcome template](https://www.w3schools.com/w3css/tryw3css_templates_parallax.htm)
 
-- [ ] Login Page
+- [X] Login Page
 - [ ] Add User
-- [ ] Register Page
+- [X] Register Page
 - [ ] MySQL store USER
 
 
 ### Form
 
-- [ ] Display Form
+- [X] Display Form
 - [ ] MySQL store FORM
 - [ ] *Docker deployment*
 
 #### CRUD
 
-- [ ] Create item 
+- [X] Create item 
 > Type it in form directly 
 
 - [ ] Read item
