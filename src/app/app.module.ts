@@ -5,6 +5,9 @@ import { AppComponent } from './app.component';
 //============Route=============//
 import { AppRoutingModule } from './app-routing.module';
 
+//============Route=============//
+import { HttpClientModule } from '@angular/common/http';
+
 //============Login=============//
 import { UserItemComponent } from './user/user-item/user-item.component';
 
@@ -15,11 +18,13 @@ import { CreateFormComponent } from './form/create-form/create-form.component';
 import { ItemComponent } from './form/item/item.component';
 import { PanelComponent } from './form/panel/panel.component';
 import { FormListComponent } from './form/form-list/form-list.component';
+import { CreateItemComponent } from './form/create-item/create-item.component';
 
 //===========Service===========//
 import { FormService } from './services/form.service';
-import { UserService } from './services/user.service';
-import { CreateItemComponent } from './form/create-item/create-item.component';
+import { AuthService } from './auth/auth.service';
+import { InMemoryAuthService } from './auth/auth.inmemory.service';
+
 
 
 @NgModule({
@@ -34,12 +39,16 @@ import { CreateItemComponent } from './form/create-item/create-item.component';
   ],
   imports: [
     BrowserModule,
+    HttpClientModule,
     ReactiveFormsModule,
     AppRoutingModule,
   ],
   providers: [
     FormService,
-    UserService
+    {
+      provide: AuthService,
+      useClass: InMemoryAuthService
+    }
   ],
   bootstrap: [AppComponent]
 })

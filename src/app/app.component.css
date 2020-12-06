@@ -18,12 +18,15 @@ nav {
     z-index: 50;
     display: flex;
     justify-content: space-around;
-    flex-direction: column;
-    height: 100vh;
+    padding: 14px 16px;
     background: #000;
     opacity:0.85;
 }
 
+a:active{
+    background: #e4bf11;
+    color: #000;
+}
 /* .burger {
     height: 15vh;
     position: relative;

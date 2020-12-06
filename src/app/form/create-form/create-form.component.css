@@ -4,6 +4,8 @@ form{
     margin: 0px;
     font-family: Verdana;
     font-size: 12px;
+    background-color: black;
+    opacity: 0.8;
 }
 
 .positive{

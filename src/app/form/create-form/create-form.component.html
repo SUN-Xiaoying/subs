@@ -1,32 +1,28 @@
 <h2>New Form</h2>
 <div class="form-group">
     <form [formGroup]="newForm" (ngSubmit)="onSubmit()">
+        <div>
+            <!-- {{myForm.date}} -->
+        </div>
         <div formArrayName="members">
-            <div *ngFor = "let member of members.controls; let i =index"
+            <div *ngFor = "let item of items.controls; let i =index"
                 [formGroupName]="i"
                 class="container-member">
+
                 <div>
-                    Person {{i+1}}
+                    <input type="checkbox"
+                            name="item-status">
+                            <!-- (click)="toggleStatus()"> -->
+
+                    <input type="text" 
+                        name="item-todo" 
+                        placeholder="To do">
                 </div>
-                <div>
-                    <input type="text"
-                            placeholder="Person name"
-                            formControlName="name">
-                </div>
-                <div>
-                    <input type="text"
-                            placeholder="Person Title"
-                            formControlName="title">
-                </div>
- 
-                <button type="button"
-                        (click)="removeMember()">
-                    Remove member</button>
             </div>
         </div>
         <button type="button"
-                (click)="addMember()">
-             Add member</button>
+                (click)="addItem()">
+             Add Item</button>
         <button type="submit">Submit</button>
         <button type="button" (click)="resetForm()">Reset</button>
         <!-- 

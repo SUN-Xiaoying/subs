@@ -26,25 +26,24 @@ export class CreateFormComponent{
   createForm(){
     this.newForm = this.fb.group({
       subject: new FormControl(null, Validators.required),
-      members: this.fb.array([])
+      items: this.fb.array([])
     });
   }
 
-  get members(): FormArray{
-    return this.newForm.get('members') as FormArray;
+  get items(): FormArray{
+    return this.newForm.get('items') as FormArray;
   }
 
-  addMember(){
-    this.members.push(
+  addItem(){
+    this.items.push(
       this.fb.group({
-        name: ['', Validators.required],
-        title: ['', Validators.required]
+        todo: ['', Validators.required]
       })
     )
   }
 
-  removeMember(index: number){
-    this.members.removeAt(index);
+  removeItem(index: number){
+    this.items.removeAt(index);
   }
 
   resetForm(){

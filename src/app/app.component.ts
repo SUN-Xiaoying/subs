@@ -9,14 +9,8 @@ import { Item } from './model/item.model';
 export class AppComponent{
   title = 'subs';
 
-  public myItem : Item;
-
   constructor(){
-    this.myItem = new Item('Shit');
   }
 
-  onToggleStatus(item: Item){
-    console.log('Shit ', item, 'was triggered');
-    this.myItem.status = !this.myItem.status;
-  }
+
 }

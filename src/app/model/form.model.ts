@@ -1,10 +1,8 @@
-import { Item } from './item.model'
+// import { Item } from './item.model'
 
 export class Form{
     date: Date = new Date();
     items: Item[];
-    members: Person[];
-    // public subject: string;
     rate: number;
     public preRate: number;
     
@@ -14,30 +12,37 @@ export class Form{
 
     constructor(public subject: string){
         this.items = [];
-        this.members = [];
     }
 
     isPositive() : boolean{
         return this.rate >= this.preRate;
     }
 
-    createItem(content: string): void{
-        var newItem = new Item(content);
-        this.items.push(newItem);
-    }
+    // createItem(content: string): void{
+    //     var newItem = new Item(content);
+    //     this.items.push(newItem);
+    // }
 
-    checkItem(i:string){
-        this.checked += 1;
-    }
+    // checkItem(i:string){
+    //     this.checked += 1;
+    // }
 
-    getRate():number{
-        return (this.checked/this.sum)*100;
-    }
+    // getRate():number{
+    //     return (this.checked/this.sum)*100;
+    // }
 
     
 }
 
-export class Person{
-    name: string;
-    title: string;
+export class Item{
+    status: boolean;
+    
+
+    constructor(public todo: string){
+        this.status = false;
+    }
+
+    toggleStatus(){
+        this.status = !this.status;
+    }
 }
